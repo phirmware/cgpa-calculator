@@ -23,8 +23,8 @@ $('#submitNum').click(() => {
 });
 
 $('#calculate-btn').click(() => {
-    for(var i = 0 ; i < document.getElementsByTagName('input').length ; i++){
-        if(document.getElementsByTagName('input')[i].value == ''){
+    for (var i = 0; i < document.getElementsByTagName('input').length; i++) {
+        if (document.getElementsByTagName('input')[i].value == '') {
             swal('Fill in all inputs');
             return;
         }
@@ -58,8 +58,15 @@ $('#calculate-btn').click(() => {
             var gradeValue = 0;
             creditPoints.push(Number(creditUnits[i].value) * gradeValue);
         }
-        else{
+        else {
             swal('Invalid Entry');
+
+            // reset all variables 
+            creditPoints = [];
+            totalCreditUnit = 0;
+            cgpa = 0;
+
+            return;
         }
     }
 
@@ -70,11 +77,11 @@ $('#calculate-btn').click(() => {
 
     var totalCreditUnit = 0;
     var allCreditUnitInputs = document.getElementsByClassName('credit-unit');
-    for(var i = 0 ; i < allCreditUnitInputs.length ; i ++){
+    for (var i = 0; i < allCreditUnitInputs.length; i++) {
         totalCreditUnit += Number(allCreditUnitInputs[i].value)
     }
 
-    var cgpa = total / totalCreditUnit ;
+    var cgpa = total / totalCreditUnit;
     document.getElementById('result').innerText = cgpa.toFixed(2);
 
 
