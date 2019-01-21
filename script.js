@@ -58,6 +58,9 @@ $('#calculate-btn').click(() => {
             var gradeValue = 0;
             creditPoints.push(Number(creditUnits[i].value) * gradeValue);
         }
+        else{
+            swal('Invalid Entry');
+        }
     }
 
     var total = 0;
