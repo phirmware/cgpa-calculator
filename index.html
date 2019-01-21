@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="st5ylesheet" href="animate.min.css">
+    <link rel="icon" href="img/favicon (1).ico">
+    <title>CGPA CALCULATOR</title>
+</head>
+
+<body>
+    <style>
+        body{
+          font-family: "varela round";
+          background: #fbfbfb;
+      }
+     .jumbotron{
+         background: azure;
+         text-transform: uppercase;
+         font-family: "varela round";
+         margin: 14px auto;
+    display: block;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    padding: 42px;
+    background: #fff;
+    width: calc(100% - 14px);
+     }
+     .jumbotron>h3{
+         font-weight: bold;
+     }
+     .container{
+        max-width: 1200px;
+    margin: 14px auto;
+    display: block;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    padding: 42px;
+    background: #fff;
+    width: calc(100% - 14px);
+     }
+    </style>
+    <div class="jumbotron">
+        <h3 class="text-center">cgpa calculator <img src="img/favicon (1).png" style="width: 40px;" alt="calc image"></h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3"></div>
+            <div class="col-lg-6 col-md-6 text-center">
+                <style>
+                    #num{
+                      margin: 5px;
+                      padding: 8px;
+                      border: none;
+                      border-radius: 5px;
+                      box-shadow: none;
+                      background: rgb(177, 250, 250);
+                      color: black;
+                      font-weight: bold;
+                  }
+
+                  #submitNum{
+                      background: black;
+                      color: azure;
+                      font-weight: bold;
+                  }
+                </style>
+                <label for="num">Number of courses</label>
+                <br>
+                <input style="width:70px" type="number" id="num"><button class="btn" id="submitNum">SUBMIT</button>
+            </div>
+            <div class="col-lg-3 col-md-3"></div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <style>
+                #courses-container {
+                    background: #fff;
+                }
+
+                #courses-container>input {
+                    margin: 5px;
+                    padding: 8px;
+                    border: none;
+                    border-radius: 5px;
+                    box-shadow: none;
+                    background: rgb(177, 250, 250);
+                    color: black;
+                    font-weight: bold;
+                }
+
+                @media(max-width:750px) {
+                    #courses-container>input {
+                        width: 120px;
+                    }
+                }
+
+                @media(max-width:470px) {
+                    #courses-container>input {
+                        width: 200px;
+                    }
+                }
+            </style>
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8 text-center calculate" id="courses-container"></div>
+            <div class="col-lg-2 col-md-2"></div>
+        </div>
+        <div class="row submit-section">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8 text-center">
+                <button class="btn" id="calculate-btn">calculate</button>
+            </div>
+            <div class="col-lg-2 col-md-2"></div>
+        </div>
+    </div>
+    <style>
+        #calculate-btn {
+            background: black;
+            color: azure;
+            font-weight: bold;
+        }
+
+        .valuation-float {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border-top: 1px solid #ededed;
+            padding: 14px;
+            display: block;
+            font-size: 0.9em;
+        }
+
+        #result {
+            color: rgb(41, 172, 172);
+            font-weight: bolder;
+        }
+
+        .submit-section {
+            margin-bottom: 80px;
+        }
+
+        .by {
+            text-decoration: none;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(255, 71, 66);
+            color: #fff;
+            position: fixed;
+            font-weight: 500;
+            z-index: 18;
+            border-top-left-radius: 5px;
+            padding: 0.5em;
+            border-top: 1px solid #efefef;
+            font-weight: 800;
+            border-left: 1px solid #efefef;
+            background: #fff;
+            color: #6f6f6f;
+        }
+
+        .by img {
+            border-radius: 2em;
+            width: 1.5em;
+            vertical-align: middle;
+        }
+
+        .by p {
+            margin: 0;
+            vertical-align: middle;
+            display: inline;
+            margin-left: 0.5em;
+            font-weight: 400;
+        }
+    </style>
+    <div class="valuation-float">
+        <h1 class="text-center" style="margin-bottom:20px">YOUR CGPA IS <span id="result"></span> </h1>
+    </div>
+    <a href="https://twitter.com/phirmware" class="by">
+        <img src="img/original.jpeg" alt="">
+        <p>by phirmware</p>
+    </a>
+    <script src="jquery.min.js"></script>
+    <script src="sweetalert.min.js"></script>
+    <script src="script.js"></script>
+    <script src="bootstrap.min.js"></script>
+</body>
+
+</html>
