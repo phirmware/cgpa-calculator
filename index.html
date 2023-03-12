@@ -8,9 +8,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="st5ylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="animate.min.css">
     <link rel="icon" href="img/favicon (1).ico">
     <title>CGPA CALCULATOR</title>
+   
 </head>
 
 <body>
@@ -47,6 +48,7 @@
     </style>
     <div class="jumbotron">
         <h3 class="text-center">cgpa calculator <img src="img/favicon (1).png" style="width: 40px;" alt="calc image"></h3>
+      
     </div>
     <div class="container">
         <div class="row">
@@ -78,9 +80,34 @@
         </div>
     </div>
     <br>
+    <div class='container' style='display:none'>
+        <div class="row">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8 " >
+                <table class='table table-hover' id='myspreadsheet' >
+                    <thead>
+                        <tr>
+                            <th>Courses</th>
+                            <th>Credit unit</th>
+                            <th>Grade</th>
+                            <th>GP</th> 
+                            <th>QP</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                   
+                </table>
+            </div>
+            <div class="col-lg-2 col-md-2"></div>
+        </div>
+    </div>
+    <br>
     <div class="container">
         <div class="row">
             <style>
+             
                 #courses-container {
                     background: #fff;
                 }
@@ -112,13 +139,19 @@
             <div class="col-lg-8 col-md-8 text-center calculate" id="courses-container"></div>
             <div class="col-lg-2 col-md-2"></div>
         </div>
+       
+
         <div class="row submit-section">
             <div class="col-lg-2 col-md-2"></div>
             <div class="col-lg-8 col-md-8 text-center">
                 <button class="btn" id="calculate-btn">calculate</button>
+                <button disabled class="btn" id="downloadbtn" style='background-color: black; color: azure;'>Download as PDF</button><br/>
+                <label for="file-id" style="margin-top:10px;">Upload previous CGPA as pdf and add more courses to calculate current CGPA</label>
+                <input  type="file" id="file-id" name="file_name" onchange="ExtractText()">
             </div>
             <div class="col-lg-2 col-md-2"></div>
         </div>
+        
     </div>
     <style>
         #calculate-btn {
@@ -126,7 +159,8 @@
             color: azure;
             font-weight: bold;
         }
-
+     
+   
         .valuation-float {
             position: fixed;
             bottom: 0;
@@ -179,7 +213,14 @@
             margin-left: 0.5em;
             font-weight: 400;
         }
+        @media(min-width:470px) {
+                    #file-id {
+                        margin-left: 20%;
+                    }
+                }
+        
     </style>
+    
     <div class="valuation-float">
         <h1 class="text-center" style="margin-bottom:20px">YOUR CGPA IS <span id="result"></span> </h1>
     </div>
@@ -189,8 +230,13 @@
     </a>
     <script src="jquery.min.js"></script>
     <script src="sweetalert.min.js"></script>
-    <script src="script.js"></script>
     <script src="bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.5.23/dist/jspdf.plugin.autotable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.10.100/pdf.min.js"></script>
+    <script src="https://www.jsdelivr.com/package/npm/pdfjs-dist" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.10.100/pdf.worker.min.js"></script>
+   <script src="script.js"></script>
 </body>
 
 </html>
